@@ -87,61 +87,66 @@ const RestaurantsList = props => {
 
   return (
     <div>
-      <div className="row">
-        <div className="input-group col-lg-4">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by name"
-            value={searchName}
-            onChange={onChangeSearchName}
-          />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByName}
-            >
-              Search
-            </button>
+      <div className="row pb-4">
+        <div className="col-lg-4">
+          <div className="input-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by name"
+              value={searchName}
+              onChange={onChangeSearchName}
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={findByName}
+              >
+                Search
+              </button>
+            </div>
           </div>
         </div>
-        <div className="input-group col-lg-4">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by zip"
-            value={searchZip}
-            onChange={onChangeSearchZip}
-          />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByZip}
-            >
-              Search
-            </button>
+        <div className="col-lg-4">
+          <div className="input-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by zip"
+              value={searchZip}
+              onChange={onChangeSearchZip}
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={findByZip}
+              >
+                Search
+              </button>
+            </div>
           </div>
         </div>
-        <div className="input-group col-lg-4">
-          <select onChange={onChangeSearchCuisine}>
-             {cuisines.map(cuisine => {
-               return (
-                 <option value={cuisine}> {cuisine.substr(0, 20)} </option>
-               )
-             })}
-          </select>
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByCuisine}
-            >
-              Search
-            </button>
+        <div className="col-lg-4">
+          <div className="input-group">
+            <select className="form-control" onChange={onChangeSearchCuisine}>
+              {cuisines.map(cuisine => {
+                return (
+                  <option value={cuisine}> {cuisine.substr(0, 20)} </option>
+                )
+              })}
+            </select>
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={findByCuisine}
+              >
+                Search
+              </button>
+            </div>
           </div>
-
         </div>
       </div>
       <div className="row">
